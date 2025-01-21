@@ -1,0 +1,60 @@
+{
+    "images": [
+      {
+        "id": 1,
+        "src": "./assets/images/png/1 MyMasjid mini palestin.jpg",
+        "alt": "Description de l'image 1",
+        "copyright": "© Yasir Gürbüz - Palestine"
+      },
+      {
+        "id": 2,
+        "src": "./assets/images/png/3 MyMasjid mini Mohamed.jpg",
+        "alt": "Description de l'image 2",
+        "copyright": "© Meruyert Gonullu - Turkey"
+      },
+      {
+        "id": 3,"src": "./assets/images/png/5 MyMasjid mini japan.jpg",
+        "alt": "Description de l'image 5",
+        "copyright": "© Masjid Shizuoka - Japan"
+      },
+      {
+        "id": 4,
+        "src": "./assets/images/png/4 MyMasjid mini Voute.jpg",
+        "alt": "Description de l'image 4",
+        "copyright": "© Murat Kahraman"
+      },
+      {
+        "id": 5,
+        "src": "./assets/images/png/2 MyMasjid mini emirat.jpg",
+        "alt": "Description de l'image 3",
+        "copyright": " © Pixabay"
+      },
+      {
+        "id": 6,
+        "src": "./assets/images/png/8 MyMasjid mini community.jpg",
+        "alt": "Description de l'image 8",
+        "copyright": "© CIRA-Argentine"
+      },
+      {
+        "id": 7,
+        "src": "./assets/images/png/6 MyMasjid mini big masjd.jpg",
+        "alt": "Description de l'image 6",
+        "copyright": "© Sina Bahar-Isphahan"
+      },
+      {
+        "id": 8,
+        "src": "./assets/images/png/7 MyMasjid mini big dome.jpg",
+        "alt": "Description de l'image 7",
+        "copyright": "© ALAMEEN A-DAE - Singapore"
+      },
+      
+      {
+        "id": 9,
+        "src": "./assets/images/png/10 MyMasjid mini Sygapor.jpg",
+        "alt": "Description de l'image 9",
+        "copyright": "© ALAMEEN A-DAE - Singapore"
+      }
+
+    ]
+  }
+  
