@@ -5,11 +5,32 @@ packages:
   - php
   - php-mysql
   - git
+  - certbot
+  - python3-certbot-apache
+
+write_files:
+  - path: /etc/apache2/sites-available/myoumma.app.conf
+    content: |
+      <VirtualHost *:80>
+        ServerName myoumma.app
+        ServerAlias www.myoumma.app
+        DocumentRoot /var/www/html
+
+        <Directory /var/www/html>
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Require all granted
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/myoumma_error.log
+        CustomLog ${APACHE_LOG_DIR}/myoumma_access.log combined
+      </VirtualHost>
 
 runcmd:
   # Nettoyer le répertoire web par défaut
   - rm -rf /var/www/html/*
-  # Cloner uniquement le dossier web
+
+  # Cloner uniquement le dossier web du dépôt GitHub
   - git clone --no-checkout https://github.com/Ilyas-Nassiri/my_oumma.git /tmp/repo
   - cd /tmp/repo
   - git sparse-checkout init --cone
@@ -17,10 +38,20 @@ runcmd:
   - git checkout main
   - mv /tmp/repo/web/* /var/www/html/
   - rm -rf /tmp/repo
+
   # Configurer les permissions
   - chown -R www-data:www-data /var/www/html
-  # Redémarrer Apache
+  - chmod -R 755 /var/www/html
+
+  # Activer le fichier de configuration Apache et le module rewrite
+  - a2ensite myoumma.app.conf
+  - a2enmod rewrite
+
+  # Installer le certificat SSL avec Let's Encrypt
+  - certbot --apache -d myoumma.app -d www.myoumma.app --non-interactive --agree-tos --email stani.mails@protonmail.com
+
+  # Redémarrer Apache pour appliquer les modifications
   - systemctl restart apache2
   - systemctl enable apache2
 
-final_message: "Installation terminée après $UPTIME secondes"
+final_message: "Installation terminée après $UPTIME secondes. Le site est accessible sur http://myoumma.app et https://myoumma.app"
