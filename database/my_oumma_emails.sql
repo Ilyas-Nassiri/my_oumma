@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 21 jan. 2025 à 21:47
+-- Généré le : mer. 22 jan. 2025 à 09:08
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `my_oumma_emails`
 --
+CREATE DATABASE IF NOT EXISTS `my_oumma_emails` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `my_oumma_emails`;
 
 -- --------------------------------------------------------
 
@@ -52,7 +54,7 @@ ALTER TABLE `registrations`
 -- AUTO_INCREMENT pour la table `registrations`
 --
 ALTER TABLE `registrations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
