@@ -1,13 +1,14 @@
 <?php
 // Configuration de la base de données
-$host = 'localhost'; // Hôte de la base de données
+$host = '10.1.1.10';         // Adresse IP de la base de données
 $dbname = 'my_oumma_emails'; // Nom de la base de données
-$username = 'root'; // Nom d'utilisateur
-$password = ''; // Mot de passe
+$username = 'root';          // Nom d'utilisateur pour la connexion
+$password = '';              // Mot de passe pour la connexion
+$port = 3306;
 
 // Connexion à la base de données
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     http_response_code(500);

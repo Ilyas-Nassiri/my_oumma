@@ -46,13 +46,48 @@
         "src": "./assets/images/png/7 MyMasjid mini big dome.jpg",
         "alt": "Description de l'image 7",
         "copyright": "© ALAMEEN A-DAE - Singapore"
-      },
-      
+      }, 
       {
         "id": 9,
         "src": "./assets/images/png/10 MyMasjid mini Sygapor.jpg",
         "alt": "Description de l'image 9",
         "copyright": "© ALAMEEN A-DAE - Singapore"
+      },
+      {
+        "id": 10,
+        "src": "./assets/images/png/11 MyMasjid mini africa.jpg",
+        "alt": "Description de l'image 10",
+        "copyright": "© Peter Yeung - Mal"
+      },
+      {
+        "id": 11,
+        "src": "./assets/images/png/12 MyMasjid mini reno africa.jpg",
+        "alt": "Description de l'image 11",
+        "copyright": "@ Peter Yeung - Mosque renovation in Djenne"
+      },
+      {
+        "id": 12,
+        "src": "./assets/images/png/13 MyMasjid mini casa.jpg",
+        "alt": "Description de l'image 12",
+        "copyright": "Uiliam Nörnberg - Casablanca Settat Moroco"
+      },
+      {
+        "id": 13,
+        "src": "./assets/images/png/14 MyMasjid mini indonesya.jpg",
+        "alt": "Description de l'image 13",
+        "copyright": "© Tom Fisk - Indonesia"
+      },
+      {
+        "id": 14,
+        "src": "./assets/images/png/13 MyMasjid mini casa.jpg",
+        "alt": "Description de l'image 14",
+        "copyright": "© Tuğba Özgen"
+      },
+      {
+        "id": 15,
+        "src": "./assets/images/png/16 MyMasjid mini paletine.jpg",
+        "alt": "Description de l'image 15",
+        "copyright": "© Thắng-Nhật Trần"
       }
 
     ]

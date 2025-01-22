@@ -54,4 +54,4 @@ runcmd:
   - systemctl restart apache2
   - systemctl enable apache2
 
-final_message: "Installation terminée après $UPTIME secondes. Le site est accessible sur http://myoumma.app et https://myoumma.app"
+final_message: "Installation terminée après $UPTIME secondes. Votre site est disponible sur https://myoumma.app"
