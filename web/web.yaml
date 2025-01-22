@@ -1,0 +1,26 @@
+#cloud-config
+package_update: true
+packages:
+  - apache2
+  - php
+  - php-mysql
+  - git
+
+runcmd:
+  # Nettoyer le répertoire web par défaut
+  - rm -rf /var/www/html/*
+  # Cloner uniquement le dossier web
+  - git clone --no-checkout https://github.com/Ilyas-Nassiri/my_oumma.git /tmp/repo
+  - cd /tmp/repo
+  - git sparse-checkout init --cone
+  - git sparse-checkout set web
+  - git checkout main
+  - mv /tmp/repo/web/* /var/www/html/
+  - rm -rf /tmp/repo
+  # Configurer les permissions
+  - chown -R www-data:www-data /var/www/html
+  # Redémarrer Apache
+  - systemctl restart apache2
+  - systemctl enable apache2
+
+final_message: "Installation terminée après $UPTIME secondes"
