@@ -1,6 +1,6 @@
 <?php
 // Configuration de la base de données
-$host = '10.1.1.10';         // Adresse IP de la base de données
+$host = 'instance-db.dc3-a.pub1.infomaniak.cloud';         // Adresse IP de la base de données
 $dbname = 'my_oumma_emails'; // Nom de la base de données
 $username = 'root';          // Nom d'utilisateur pour la connexion
 $password = '';              // Mot de passe pour la connexion

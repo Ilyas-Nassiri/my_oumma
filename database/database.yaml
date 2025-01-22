@@ -6,11 +6,26 @@ packages:
   - mariadb-server
   - wget
 
+write_files:
+  - path: /etc/resolv.conf
+    content: |
+      nameserver 8.8.8.8
+      nameserver 8.8.4.4
+
 runcmd:
+  # Modifier le fichier de configuration pour accepter les connexions externes
   - sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mariadb.conf.d/50-server.cnf
-  - wget -O /tmp/db.sql https://github.com/Ilyas-Nassiri/my_oumma/blob/main/database/my_oumma_emails.sql
-  - mysql < /tmp/db.sql
-  - systemctl restart mariadb  
+  
+  # Télécharger directement le fichier SQL depuis le lien brut
+  - wget -O /tmp/db.sql https://raw.githubusercontent.com/Ilyas-Nassiri/my_oumma/main/database/my_oumma_emails.sql
+  
+  # Importer la base de données
+  - mysql -u root < /tmp/db.sql
+  
+  # Redémarrer MariaDB
+  - systemctl restart mariadb
+  
+  # Activer MariaDB au démarrage
   - systemctl enable mariadb
 
-final_message: "The system is finally up, after $UPTIME seconds" 
+final_message: "The system is finally up, after $UPTIME seconds"
